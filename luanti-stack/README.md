@@ -89,7 +89,7 @@ Il faut prendre le temps de regarder, corriger et prendre du recul sur ce qu'ell
 Prometheus scrappe les métriques toutes les 5 secondes via `http://luanti:30000/metrics`.
 
 - `scrape_interval: 5s` : Correspond a la fréquence de collecte
-- `luanti:30000` : Le nom est résolu grâce au DNS interne de Docker
+- `luanti:30000` : Le nom est résolu grâce au DNS interne de Docker, de plus luanti est sur le même réseau que prometheus, c'est donc pour ça qu'il peut y accèder sans avoir à exposer un port à l'exterieur.
 
 ## Capture d'écran attendue
 
