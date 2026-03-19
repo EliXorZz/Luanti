@@ -2,29 +2,15 @@
 
 Infrastructure Docker complète pour serveur de jeu Luanti avec monitoring Prometheus et Grafana.
 
-## Architecture
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                      Docker Network                      │
-│                                                         │
-│  ┌──────────┐   ┌───────────┐   ┌──────────┐   ┌─────┐ │
-│  │  Luanti  │   │Prometheus │   │  Grafana │   │ Web │ │
-│  │  Server  │──▶│ :9090     │──▶│  :3000   │   │:8080│ │
-│  │ :30000   │   └───────────┘   └──────────┘   └─────┘ │
-│  └──────────┘                                          │
-└─────────────────────────────────────────────────────────┘
-```
-
 ## Services
 
-| Service | Port | Protocol | Description |
-|---------|------|----------|-------------|
-| Luanti Server | 30000 | UDP | Serveur de jeu |
-| Luanti Metrics | 30000 | TCP | Endpoint Prometheus |
-| Prometheus | 9090 | HTTP | Collecte des métriques |
-| Grafana | 3000 | HTTP | Visualisation |
-| Landing (Nginx) | 8080 | HTTP | Page d'accueil |
+| Service | Port | Protocol | Description                                   |
+|---------|------|----------|-----------------------------------------------|
+| Luanti Server | 30000 | UDP | Serveur de jeu                                |
+| Luanti Metrics | 30000 | TCP | Endpoint Prometheus pour scrape les données   |
+| Prometheus | 9090 | HTTP | Collecte des métriques (Prometheus dashboard) |
+| Grafana | 3000 | HTTP | Visualisation                                 |
+| Landing (Nginx) | 8080 | HTTP | Page d'accueil / Landing page                 |
 
 ## Démarrage rapide
 
